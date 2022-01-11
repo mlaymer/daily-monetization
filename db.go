@@ -2,6 +2,8 @@ package main
 
 import (
 	"database/sql"
+	"os"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/mysql"
@@ -9,7 +11,6 @@ import (
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 	_ "github.com/golang-migrate/migrate/v4/source/github"
 	log "github.com/sirupsen/logrus"
-	"os"
 )
 
 var dbConnString = os.Getenv("DB_CONNECTION_STRING")

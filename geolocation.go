@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/ip2location/ip2location-go"
 	"strings"
+
+	"github.com/ip2location/ip2location-go"
 )
 
 func openGeolocationDatabase() {

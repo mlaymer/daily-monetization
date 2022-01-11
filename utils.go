@@ -3,8 +3,6 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"github.com/afex/hystrix-go/hystrix"
-	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -14,6 +12,9 @@ import (
 	"strings"
 	"unicode"
 	"unicode/utf8"
+
+	"github.com/afex/hystrix-go/hystrix"
+	log "github.com/sirupsen/logrus"
 )
 
 var httpClient *http.Client

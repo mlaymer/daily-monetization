@@ -1,23 +1,24 @@
 package main
 
 import (
-	"cloud.google.com/go/pubsub"
 	"context"
-	"contrib.go.opencensus.io/exporter/stackdriver"
-	"contrib.go.opencensus.io/exporter/stackdriver/propagation"
 	"encoding/json"
 	"fmt"
+	"math/rand"
+	"net/http"
+	"os"
+	"strings"
+	"time"
+
+	"cloud.google.com/go/pubsub"
+	"contrib.go.opencensus.io/exporter/stackdriver"
+	"contrib.go.opencensus.io/exporter/stackdriver/propagation"
 	"github.com/afex/hystrix-go/hystrix"
 	log "github.com/sirupsen/logrus"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/trace"
 	_ "go.uber.org/automaxprocs"
 	"google.golang.org/api/option"
-	"math/rand"
-	"net/http"
-	"os"
-	"strings"
-	"time"
 )
 
 var gcpOpts []option.ClientOption

@@ -3,8 +3,9 @@ package main
 import (
 	"context"
 	"database/sql"
-	"github.com/afex/hystrix-go/hystrix"
 	"time"
+
+	"github.com/afex/hystrix-go/hystrix"
 )
 
 type Ad struct {

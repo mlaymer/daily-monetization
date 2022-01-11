@@ -2,9 +2,10 @@ package main
 
 import (
 	"context"
-	"github.com/stretchr/testify/assert"
 	"sort"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestAddOrUpdateUserTags(t *testing.T) {
