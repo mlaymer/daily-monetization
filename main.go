@@ -22,7 +22,7 @@ import (
 )
 
 var gcpOpts []option.ClientOption
-var segmentToId map[string]string = map[string]string{
+var segmentToId = map[string]string{
 	"frontend":   "CE7I5K3Y",
 	"backend":    "CE7I5K37",
 	"devops":     "CE7I5KQE",
