@@ -25,12 +25,12 @@ type Migrations struct {
 	migrates *migrate.Migrate
 }
 
-func (m *Migrations) Close() error {
-	if err := m.database.Close(); err != nil {
+func (api *Migrations) Close() error {
+	if err := api.database.Close(); err != nil {
 		return err
 	}
 
-	sourceErr, dbErr := m.migrates.Close()
+	sourceErr, dbErr := api.migrates.Close()
 	if sourceErr != nil {
 		return sourceErr
 	}
@@ -47,8 +47,13 @@ func (m *Migrations) Close() error {
 // version specified in the configuration settings.
 //
 // See configs.Migrations.
-func (m *Migrations) Apply() error {
-	return m.migrates.Migrate(m.config.Version)
+func (api *Migrations) Apply() error {
+	return api.migrates.Migrate(api.config.Version)
+}
+
+// Drop deletes everything in the database.
+func (api *Migrations) Drop() error {
+	return api.migrates.Drop()
 }
 
 // NewMigrations initializes the service to apply
